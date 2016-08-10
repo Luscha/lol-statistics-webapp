@@ -11,6 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return view('welcome');});
+Route::get('/fetch_challengers', 'FetchController@fetchChallengers');
+Route::get('/fetch_masters', 'FetchController@fetchMasters');
+Route::get('/fetch_match', function () {return view('fetch_match');});
+
+Route::post('/ajax/fetch_match_call', 'FetchController@fetchMatches');
